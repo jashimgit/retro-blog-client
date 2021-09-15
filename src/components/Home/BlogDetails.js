@@ -9,8 +9,8 @@ const BlogDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
 // dispatch(selectedBlog(response.data));
-  console.log("blog _Id", id);
-  console.log({blog})
+  // console.log("blog _Id", id);
+  // console.log({blog})
 
   const fetchBlogDetails = () => {
     const response = axios

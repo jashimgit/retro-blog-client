@@ -7,7 +7,8 @@ const BlogCard = () => {
   const blogs = useSelector((state) => state.allBlogs.blogs)
     
   const renderList = blogs.map((blog) => {
-      const {_id, title, Author, email, value, imageURL, date} = blog;
+      const {title, Author, email, value, imageURL, date} = blog;
+      const {id} = blog._id;
       return (
         <div class="bg-white border-indigo-600 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100">
         <img src={imageURL} alt="" class="object-contain h-64 w-full" />
@@ -20,7 +21,7 @@ const BlogCard = () => {
           <div className="mt-2">
             {/* blogDetails */}
             <div class="flex items-center justify-between mx-8">
-              <Link to={`/blogDetails/${_id}`}>
+              <Link to={`/blogDetails/${id}`}>
               <p
                 class="text-blue-500 text-md -ml-3 "
                 style={{ cursor: "pointer" }}
@@ -29,7 +30,7 @@ const BlogCard = () => {
               </p>
               </Link>
 
-              <Link to={`/blogDetails/${_id}`}>
+              <Link to={`/blogDetails/${id}`}>
               <a
                 href="#"
                 class="flex text-gray-700"
